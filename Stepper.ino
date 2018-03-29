@@ -1,5 +1,4 @@
 #include <ros.h>
-#include <StepperDriver.h>
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Float32.h>
 #include "Motor.hpp"
@@ -48,8 +47,6 @@ void setup ()
   //need to set the enable to LOW because if it is HIGH the motors are desabled
   pinMode(EN, OUTPUT);
   digitalWrite(EN, LOW);
-
-  StepperDriver.init();
 
   nh.initNode(); // initialize ROS nodes
   nh.advertise(pubtest);

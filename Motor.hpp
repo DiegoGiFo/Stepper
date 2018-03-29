@@ -5,7 +5,7 @@
 
 class Motor {
   public:
-    Motor(int step, int dir);
+    Motor(int STEP, int DIR);
 
     float get_speed();
     void set_speed(float speed);
