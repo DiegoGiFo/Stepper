@@ -9,10 +9,11 @@ int get_direction(float x)
     else return -1;
 }
 
-Motor::Motor(int STEP, int DIR){
-    this->target_w = 0.0;
-    this->current_w = 0.0;
-    this->step_mt(AccelStepper::DRIVER, STEP, DIR);
+Motor::Motor(int STEP, int DIR):
+  target_w(0.0),
+  current_w(0.0),
+  step_mt(AccelStepper::DRIVER, STEP, DIR)
+{
     this->step_mt.setMaxSpeed(10000);
 }
 
