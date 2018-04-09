@@ -6,7 +6,6 @@
 #include "Robot.hpp"
 
 #define EN 8
-int cnt = 0;
 
 ros::NodeHandle  nh; // allows to create publisher/subscriber
 geometry_msgs::Twist vel;
@@ -17,8 +16,6 @@ Robot robot(2,5,3,6);
 void motors_cb(const geometry_msgs::Twist &move)
 {
   robot.set_motors(move);
-
-  cnt ++;
 
   vel.linear.x = move.linear.x;
   vel.angular.z = move.angular.z;
@@ -47,7 +44,7 @@ void setup ()
 
 void loop()
 {
-  if((cnt%10) == 1)
+  if((millis()%50) == 1)
   {
     pub.publish(&vel);
     pubtest.publish(&msg);
