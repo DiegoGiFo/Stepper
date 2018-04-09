@@ -12,6 +12,8 @@ class Robot {
     void set_motors(const geometry_msgs::Twist &movements);
     void run_mt();
 
+    float info_msg;
+
   private:
     Motor right_mt;
     Motor left_mt;

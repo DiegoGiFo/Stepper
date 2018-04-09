@@ -24,6 +24,7 @@ Robot::Robot(int step1, int dir1, int step2, int dir2):
 
    this->right_mt.set_speed(this->w_right);
    this->left_mt.set_speed(this->w_left);
+   this->info_msg = w_right;
 
  }
 
