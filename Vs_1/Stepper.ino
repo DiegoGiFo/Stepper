@@ -34,8 +34,6 @@ void motors_cb(const geometry_msgs::Twist &move)
   vel.linear.x = move.linear.x;
   vel.angular.z = move.angular.z;
 
-  msg.data = w_right;
-
 }
 
 ros::Subscriber<geometry_msgs::Twist> sub("/cmd_vel", &motors_cb);
@@ -56,14 +54,15 @@ void setup ()
 
 void loop()
 {
-  if((cnt%10) == 1)
-  {
-    pub.publish(&vel);
-    pubtest.publish(&msg);
-  }
-
   right_mt.run();
   left_mt.run();
+  msg.data = right_mt.vel_info;
+
+  //if((cnt%10) == 1)
+  //{
+    pub.publish(&vel);
+    pubtest.publish(&msg);
+  //}
 
   nh.spinOnce();
 }

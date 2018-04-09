@@ -11,6 +11,8 @@ class Motor {
     void set_speed(float speed);
     void run();
 
+    float vel_info;
+
   private:
     float current_w;
     float target_w;
