@@ -1,7 +1,7 @@
 #include "Motor.hpp"
 #include <StepperDriver.h>
 
-const float LAMBDA = 0.999f;
+const float LAMBDA = 0.995f;
 
 int get_direction(float x)
 {

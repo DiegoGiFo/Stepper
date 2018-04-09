@@ -23,7 +23,7 @@ void motors_cb(const geometry_msgs::Twist &move)
   vel.linear.x = move.linear.x;
   vel.angular.z = move.angular.z;
 
-  //msg.data = w_right;
+  msg.data = w_right;
 
 }
 
