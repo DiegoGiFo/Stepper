@@ -5,7 +5,7 @@
 #include "Robot.hpp"
 
 #define L 0.160f // distance between the two wheels of the robot
-#define R 0.033f //radius of the wheel od the robot
+#define R 0.040f //radius of the wheel od the robot
 
 const float A = L/(2.0f*R);
 const float B = 1.0f/R;
