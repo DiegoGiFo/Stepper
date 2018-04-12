@@ -18,15 +18,15 @@ Robot::Robot(int step1, int dir1, int step2, int dir2):
   this->w_left = 0.0;
 }
 
- void Robot::set_motors(const geometry_msgs::Twist &movements) {
+void Robot::set_motors(const geometry_msgs::Twist &movements) {
    this->w_right = A*movements.angular.z + B*movements.linear.x;
    this->w_left = A*movements.angular.z - B*movements.linear.x;
 
+   this->info_msgr = this->w_right;
+   this->info_msgl = this->w_left;
+
    this->right_mt.set_speed(this->w_right);
    this->left_mt.set_speed(this->w_left);
-   this->info_msgr = w_right;
-   this->info_msgl = w_left;
-
  }
 
  void Robot::run_mt(){

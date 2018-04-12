@@ -20,6 +20,7 @@ class Robot {
     Motor left_mt;
     float w_right;
     float w_left;
+
 };
 
 #endif
